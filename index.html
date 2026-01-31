@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Belajar Matematika SD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;margin:0;background:#f4f6f8}
+header{background:#1976d2;color:white;padding:20px;text-align:center}
+nav{background:#0d47a1;display:flex;flex-wrap:wrap;justify-content:center}
+nav a{color:white;padding:10px 14px;text-decoration:none}
+nav a:hover{background:#1565c0}
+section{display:none;padding:20px}
+section.active{display:block}
+.card{background:white;padding:15px;margin:10px 0;border-radius:8px}
+button{padding:6px 10px;margin-top:5px}
+footer{background:#0d47a1;color:white;text-align:center;padding:10px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Belajar Matematika SD</h1>
+<p>Kelas 1–6 | Kurikulum Merdeka & K13</p>
+<button onclick="setMode('siswa')">Mode Siswa</button>
+<button onclick="setMode('guru')">Mode Guru</button>
+</header>
+
+<nav>
+<a href="#" onclick="show('k1')">Kelas 1</a>
+<a href="#" onclick="show('k2')">Kelas 2</a>
+<a href="#" onclick="show('k3')">Kelas 3</a>
+<a href="#" onclick="show('k4')">Kelas 4</a>
+<a href="#" onclick="show('k5')">Kelas 5</a>
+<a href="#" onclick="show('k6')">Kelas 6</a>
+</nav>
+
+<section id="k1" class="active">
+<h2>Kelas 1</h2>
+<div class="card">
+<b>Bab 1: Bilangan 1–20</b><br>
+Materi: Mengenal angka 1 sampai 20.<br>
+Latihan: 4 + 1 = ?<br>
+<button onclick="toggleJawaban('j1')">Tampilkan Jawaban</button>
+<div id="j1" style="display:none">Jawaban: 5</div>
+</div>
+</section>
+
+<section id="k2">
+<h2>Kelas 2</h2>
+<div class="card">
+<b>Bab: Penjumlahan & Pengurangan</b><br>
+25 + 10 = ?<br>
+<button onclick="toggleJawaban('j2')">Tampilkan Jawaban</button>
+<div id="j2" style="display:none">Jawaban: 35</div>
+</div>
+</section>
+
+<section id="k3">
+<h2>Kelas 3</h2>
+<div class="card">
+<b>Bab: Perkalian</b><br>
+6 × 4 = ?<br>
+<button onclick="toggleJawaban('j3')">Tampilkan Jawaban</button>
+<div id="j3" style="display:none">Jawaban: 24</div>
+</div>
+</section>
+
+<section id="k4">
+<h2>Kelas 4</h2>
+<div class="card">
+<b>Bab: Pecahan</b><br>
+1/2 + 1/2 = ?<br>
+<button onclick="toggleJawaban('j4')">Tampilkan Jawaban</button>
+<div id="j4" style="display:none">Jawaban: 1</div>
+</div>
+</section>
+
+<section id="k5">
+<h2>Kelas 5</h2>
+<div class="card">
+<b>Bab: Pecahan</b><br>
+2/4 + 1/4 = ?<br>
+<button onclick="toggleJawaban('j5')">Tampilkan Jawaban</button>
+<div id="j5" style="display:none">Jawaban: 3/4</div>
+</div>
+</section>
+
+<section id="k6">
+<h2>Kelas 6</h2>
+<div class="card">
+<b>Bab: Rata-rata</b><br>
+Rata-rata 2,4,6 = ?<br>
+<button onclick="toggleJawaban('j6')">Tampilkan Jawaban</button>
+<div id="j6" style="display:none">Jawaban: 4</div>
+</div>
+</section>
+
+<footer>
+© 2026 Website Pembelajaran MTK SD
+</footer>
+
+<script>
+function show(id){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+function toggleJawaban(id){
+const el=document.getElementById(id);
+el.style.display=el.style.display==='none'?'block':'none';
+}
+function setMode(m){
+alert('Mode '+m.toUpperCase());
+}
+</script>
+
+</body>
+</html>
